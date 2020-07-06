@@ -24,6 +24,18 @@ function displayResults(weather) {
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
+  let temp = document.querySelector(".temp");
+  temp.innerText = Math.floor(`${weather.main.temp}`);
+
+  let description = document.querySelector(".weather");
+  description.innerText = `${weather.weather[0].description}`;
+
+  let hiTemp = document.querySelector(".hi");
+  hiTemp.innerText = "Hi: " + Math.ceil(`${weather.main.temp_max}`);
+
+  let lowTemp = document.querySelector(".low");
+  lowTemp.innerText = "// Low: " + Math.floor(`${weather.main.temp_min}`);
+
   let now = new Date();
   let date = document.querySelector(".location .date");
   date.innerText = dateBuilder(now);
